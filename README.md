@@ -3,11 +3,11 @@ IntelliPaste-for-XCode
 
 ## Overview
 
-IntelliPaste is a Xcode plugin that makes copy-pasting between header and method files easier. 
+IntelliPaste is an Xcode plugin that makes copy-pasting between header and method files easier. 
 
 ## Usage
 
-Copy one or more methods from the method file. Then use `Shift+CmdA` or `Edit` > `Paste Methods` to copy paste them with the correct format for the header file. Alternatively, the starting point can be the header file, which is then copy-pasted to the method file with the appropriate format.
+Copy one or more methods from the method file. Then use `Shift+Cmd+V` or `Edit` > `Paste Methods` to copy paste them with the correct format to the header file. Alternatively, the starting point can be the header file, which is then copy-pasted to the method file.
 
 ![IntelliPaste-Demo.gif](https://raw.githubusercontent.com/RobertGummesson/IntelliPaste-for-XCode/master/Screenshots/IntelliPaste-Demo.gif)
 
