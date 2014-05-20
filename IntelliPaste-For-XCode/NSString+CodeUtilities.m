@@ -41,13 +41,16 @@
         switch (token) {
             case '+':
             case '-':
+                if (isMethod) {
+                    return nil;
+                }
                 isMethod = canBeMethod;
                 break;
                 
             case '{':
             case ';':
             {
-                if (!isMethod) {
+                if (isRoot && !isMethod) {
                     break;
                 }
                 isMethod = NO;
@@ -62,14 +65,11 @@
                 range.location++;
                 range.length--;
                 [self methodsWithRange:&range characterSet:characterSetDefault isRoot:NO];
+                canBeMethod = YES;
                 break;
             }
                 
             case '}':
-                if (isRoot) {
-                    canBeMethod = YES;
-                    break;
-                }
                 rangePointer->location = ++range.location;
                 rangePointer->length = --range.length;
                 return methods;
