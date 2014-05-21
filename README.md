@@ -19,7 +19,7 @@ The plug-in is developed and tested using Xcode 5.1.1.
 
 ## Known issues
 
-* Methods with comments containing curly brackets, minuses and pluses could under some circumstances fail to paste. A fix for this is on my TODO-list. 
+* Methods with comments containing curly brackets could under some circumstances fail to paste. A fix for this is on my TODO-list. 
 
 ## License
 
