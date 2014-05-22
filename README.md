@@ -13,7 +13,9 @@ Copy one or more methods from the method file. Then use `Shift+Cmd+V` or `Edit` 
 
 ## Installation
 
-Simply build the Xcode project and restart Xcode. The plugin will automatically be installed in `~/Library/Application Support/Developer/Shared/Xcode/Plug-ins`. To uninstall, just remove the plugin from there (and restart Xcode).
+IntelliPaste is available through [Alcatraz - The packag manager for Xcode](http://alcatraz.io/)
+
+If you rather compile it yourself, simply build the Xcode project and restart Xcode. The plugin will automatically be installed in `~/Library/Application Support/Developer/Shared/Xcode/Plug-ins`. To uninstall, just remove the plugin from there (and restart Xcode).
 
 The plug-in is developed and tested using Xcode 5.1.1. 
 
