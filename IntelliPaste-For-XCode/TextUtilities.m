@@ -28,7 +28,7 @@
     if (!rgb) {
         return nil;
     }
-    return [NSString stringWithFormat:@"[UIColor colorWithRed:%@./255. green:%@./255. blue:%@/255.]", rgb[0], rgb[1], rgb[2]];
+    return [NSString stringWithFormat:@"[UIColor colorWithRed:%@./255. green:%@./255. blue:%@/255. alpha:1.]", rgb[0], rgb[1], rgb[2]];
 }
 
 @end
