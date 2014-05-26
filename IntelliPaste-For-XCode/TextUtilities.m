@@ -6,6 +6,7 @@
 //
 
 #import "TextUtilities.h"
+#import "ProjectUtilities.h"
 
 @implementation TextUtilities
 
@@ -28,7 +29,9 @@
     if (!rgb) {
         return nil;
     }
-    return [NSString stringWithFormat:@"[UIColor colorWithRed:%@./255. green:%@./255. blue:%@/255. alpha:1.]", rgb[0], rgb[1], rgb[2]];
+    
+    NSString *prefix = [ProjectUtilities projectType] == ProjectTypeMacosx ? @"NS" : @"UI";
+    return [NSString stringWithFormat:@"[%@Color colorWithRed:%@./255. green:%@./255. blue:%@/255. alpha:1.]", prefix, rgb[0], rgb[1], rgb[2]];
 }
 
 @end
