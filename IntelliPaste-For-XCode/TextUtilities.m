@@ -25,6 +25,7 @@
         return nil;
     }
     
+    //TODO: Consider validating the numbers. Currently 999,999,999 is valid.
     NSRegularExpression *const regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d{1,3}),+\\s*(\\d{1,3}),+\\s*(\\d{1,3})" options:0 error:nil];
     
     __block NSArray *rgb = nil;
