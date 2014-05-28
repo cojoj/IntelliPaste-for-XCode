@@ -40,7 +40,7 @@
     }
     
     NSString *prefix = [ProjectUtilities projectType] == ProjectTypeMacosx ? @"NS" : @"UI";
-    return [NSString stringWithFormat:@"[%@Color colorWithRed:%@./255. green:%@./255. blue:%@/255. alpha:1.]", prefix, rgb[0], rgb[1], rgb[2]];
+    return [NSString stringWithFormat:@"[%@Color colorWithRed:%@./255. green:%@./255. blue:%@./255. alpha:1.]", prefix, rgb[0], rgb[1], rgb[2]];
 }
 
 + (NSString *)colorsFromHexText:(NSString *)text
@@ -59,8 +59,14 @@
     }
     
     //Trim off 0x prefixes if needed
-    if (text.length == 8 && [[[text substringToIndex:2] uppercaseString] isEqualToString:@"0x"]) {
+    if (text.length == 8 && [[[text substringToIndex:2] lowercaseString] isEqualToString:@"0x"]) {
         text = [text substringFromIndex:2];
+    }
+    
+    // validate
+    NSCharacterSet *const hexCharacterSet = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789ABCDEFabcdef"] invertedSet];
+    if ([text rangeOfCharacterFromSet:hexCharacterSet].location != NSNotFound) {
+        return nil;
     }
     
     NSScanner *scanner = [[NSScanner alloc] initWithString:text];
