@@ -58,7 +58,7 @@
         return nil;
     }
     
-    //Trim off 0x prefixes if needed q
+    //Trim off 0x prefixes if needed
     if (text.length == 8 && [[[text substringToIndex:2] uppercaseString] isEqualToString:@"0x"]) {
         text = [text substringFromIndex:2];
     }
