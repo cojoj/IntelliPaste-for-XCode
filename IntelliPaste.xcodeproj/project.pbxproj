@@ -41,6 +41,7 @@
 		E15335EB19367A1B00E45E3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E15335EF19367A1B00E45E3A /* IntelliPaste Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IntelliPaste Tests-Prefix.pch"; sourceTree = "<group>"; };
 		E15335FB19367C6B00E45E3A /* TextUtilities_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextUtilities_Tests.m; sourceTree = "<group>"; };
+		E170E79C1936986F00B8499D /* IntelliPaste-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IntelliPaste-Prefix.pch"; sourceTree = "<group>"; };
 		E1A282BF19267E7200C3B87D /* IntelliPaste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntelliPaste.h; sourceTree = "<group>"; };
 		E1A282C019267E7200C3B87D /* IntelliPaste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntelliPaste.m; sourceTree = "<group>"; };
 		E1A282C219267F9C00C3B87D /* NSString+CodeUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CodeUtilities.h"; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		E1D6A12519267AEC00B425B5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		E1D6A12819267AEC00B425B5 /* IntelliPaste-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IntelliPaste-Info.plist"; sourceTree = "<group>"; };
 		E1D6A12A19267AEC00B425B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E1D6A12C19267AEC00B425B5 /* IntelliPaste-For-XCode-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IntelliPaste-For-XCode-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +162,7 @@
 			children = (
 				E1D6A12819267AEC00B425B5 /* IntelliPaste-Info.plist */,
 				E1D6A12919267AEC00B425B5 /* InfoPlist.strings */,
-				E1D6A12C19267AEC00B425B5 /* IntelliPaste-For-XCode-Prefix.pch */,
+				E170E79C1936986F00B8499D /* IntelliPaste-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
