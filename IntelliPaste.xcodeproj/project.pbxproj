@@ -7,13 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E112CE061930954800B72F92 /* TextUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E112CE051930954800B72F92 /* TextUtilities.m */; };
+		E116FCF1193681B800E46924 /* TextUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E112CE051930954800B72F92 /* TextUtilities.m */; };
+		E116FCF2193681E000E46924 /* ProjectUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E1253FBC1930F6B0003584F2 /* ProjectUtilities.m */; };
+		E1253FBD1930F6B1003584F2 /* ProjectUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E1253FBC1930F6B0003584F2 /* ProjectUtilities.m */; };
+		E15335E619367A1B00E45E3A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15335E519367A1B00E45E3A /* XCTest.framework */; };
+		E15335EC19367A1B00E45E3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E15335EA19367A1B00E45E3A /* InfoPlist.strings */; };
+		E15335FC19367C6B00E45E3A /* TextUtilities_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E15335FB19367C6B00E45E3A /* TextUtilities_Tests.m */; };
 		E1A282C119267E7200C3B87D /* IntelliPaste.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A282C019267E7200C3B87D /* IntelliPaste.m */; };
 		E1A282C419267F9C00C3B87D /* NSString+CodeUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A282C319267F9C00C3B87D /* NSString+CodeUtilities.m */; };
 		E1D6A12119267AEC00B425B5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D6A12019267AEC00B425B5 /* Cocoa.framework */; };
 		E1D6A12B19267AEC00B425B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1D6A12919267AEC00B425B5 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E15335F019367A1B00E45E3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1D6A11519267AEC00B425B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1D6A11C19267AEC00B425B5;
+			remoteInfo = IntelliPaste;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		E112CE041930954800B72F92 /* TextUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextUtilities.h; sourceTree = "<group>"; };
+		E112CE051930954800B72F92 /* TextUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextUtilities.m; sourceTree = "<group>"; };
+		E1253FBB1930F6B0003584F2 /* ProjectUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectUtilities.h; sourceTree = "<group>"; };
+		E1253FBC1930F6B0003584F2 /* ProjectUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectUtilities.m; sourceTree = "<group>"; };
+		E15335E419367A1B00E45E3A /* IntelliPaste Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IntelliPaste Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E15335E519367A1B00E45E3A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E15335E919367A1B00E45E3A /* IntelliPaste Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IntelliPaste Tests-Info.plist"; sourceTree = "<group>"; };
+		E15335EB19367A1B00E45E3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E15335EF19367A1B00E45E3A /* IntelliPaste Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IntelliPaste Tests-Prefix.pch"; sourceTree = "<group>"; };
+		E15335FB19367C6B00E45E3A /* TextUtilities_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextUtilities_Tests.m; sourceTree = "<group>"; };
+		E170E79C1936986F00B8499D /* IntelliPaste-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IntelliPaste-Prefix.pch"; sourceTree = "<group>"; };
 		E1A282BF19267E7200C3B87D /* IntelliPaste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntelliPaste.h; sourceTree = "<group>"; };
 		E1A282C019267E7200C3B87D /* IntelliPaste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntelliPaste.m; sourceTree = "<group>"; };
 		E1A282C219267F9C00C3B87D /* NSString+CodeUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CodeUtilities.h"; sourceTree = "<group>"; };
@@ -25,10 +53,17 @@
 		E1D6A12519267AEC00B425B5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		E1D6A12819267AEC00B425B5 /* IntelliPaste-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IntelliPaste-Info.plist"; sourceTree = "<group>"; };
 		E1D6A12A19267AEC00B425B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E1D6A12C19267AEC00B425B5 /* IntelliPaste-For-XCode-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IntelliPaste-For-XCode-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E15335E119367A1B00E45E3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E15335E619367A1B00E45E3A /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1D6A11A19267AEC00B425B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -40,10 +75,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E15335E719367A1B00E45E3A /* IntelliPaste Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E15335E819367A1B00E45E3A /* Supporting Files */,
+				E15335FB19367C6B00E45E3A /* TextUtilities_Tests.m */,
+			);
+			path = "IntelliPaste Tests";
+			sourceTree = "<group>";
+		};
+		E15335E819367A1B00E45E3A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E15335E919367A1B00E45E3A /* IntelliPaste Tests-Info.plist */,
+				E15335EA19367A1B00E45E3A /* InfoPlist.strings */,
+				E15335EF19367A1B00E45E3A /* IntelliPaste Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E15335F819367BAA00E45E3A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E1A282C219267F9C00C3B87D /* NSString+CodeUtilities.h */,
+				E1A282C319267F9C00C3B87D /* NSString+CodeUtilities.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		E1D6A11419267AEC00B425B5 = {
 			isa = PBXGroup;
 			children = (
 				E1D6A12619267AEC00B425B5 /* IntelliPaste-For-XCode */,
+				E15335E719367A1B00E45E3A /* IntelliPaste Tests */,
 				E1D6A11F19267AEC00B425B5 /* Frameworks */,
 				E1D6A11E19267AEC00B425B5 /* Products */,
 			);
@@ -53,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				E1D6A11D19267AEC00B425B5 /* IntelliPaste.xcplugin */,
+				E15335E419367A1B00E45E3A /* IntelliPaste Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				E1D6A12019267AEC00B425B5 /* Cocoa.framework */,
+				E15335E519367A1B00E45E3A /* XCTest.framework */,
 				E1D6A12219267AEC00B425B5 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -79,11 +145,14 @@
 		E1D6A12619267AEC00B425B5 /* IntelliPaste-For-XCode */ = {
 			isa = PBXGroup;
 			children = (
+				E15335F819367BAA00E45E3A /* Categories */,
 				E1D6A12719267AEC00B425B5 /* Supporting Files */,
 				E1A282BF19267E7200C3B87D /* IntelliPaste.h */,
 				E1A282C019267E7200C3B87D /* IntelliPaste.m */,
-				E1A282C219267F9C00C3B87D /* NSString+CodeUtilities.h */,
-				E1A282C319267F9C00C3B87D /* NSString+CodeUtilities.m */,
+				E112CE041930954800B72F92 /* TextUtilities.h */,
+				E112CE051930954800B72F92 /* TextUtilities.m */,
+				E1253FBB1930F6B0003584F2 /* ProjectUtilities.h */,
+				E1253FBC1930F6B0003584F2 /* ProjectUtilities.m */,
 			);
 			path = "IntelliPaste-For-XCode";
 			sourceTree = "<group>";
@@ -93,7 +162,7 @@
 			children = (
 				E1D6A12819267AEC00B425B5 /* IntelliPaste-Info.plist */,
 				E1D6A12919267AEC00B425B5 /* InfoPlist.strings */,
-				E1D6A12C19267AEC00B425B5 /* IntelliPaste-For-XCode-Prefix.pch */,
+				E170E79C1936986F00B8499D /* IntelliPaste-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -101,6 +170,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E15335E319367A1B00E45E3A /* IntelliPaste Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E15335F419367A1B00E45E3A /* Build configuration list for PBXNativeTarget "IntelliPaste Tests" */;
+			buildPhases = (
+				E15335E019367A1B00E45E3A /* Sources */,
+				E15335E119367A1B00E45E3A /* Frameworks */,
+				E15335E219367A1B00E45E3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E15335F119367A1B00E45E3A /* PBXTargetDependency */,
+			);
+			name = "IntelliPaste Tests";
+			productName = "IntelliPaste Tests";
+			productReference = E15335E419367A1B00E45E3A /* IntelliPaste Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E1D6A11C19267AEC00B425B5 /* IntelliPaste */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1D6A12F19267AEC00B425B5 /* Build configuration list for PBXNativeTarget "IntelliPaste" */;
@@ -126,6 +213,11 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Cane Media Limited";
+				TargetAttributes = {
+					E15335E319367A1B00E45E3A = {
+						TestTargetID = E1D6A11C19267AEC00B425B5;
+					};
+				};
 			};
 			buildConfigurationList = E1D6A11819267AEC00B425B5 /* Build configuration list for PBXProject "IntelliPaste" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -140,11 +232,20 @@
 			projectRoot = "";
 			targets = (
 				E1D6A11C19267AEC00B425B5 /* IntelliPaste */,
+				E15335E319367A1B00E45E3A /* IntelliPaste Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E15335E219367A1B00E45E3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E15335EC19367A1B00E45E3A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1D6A11B19267AEC00B425B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,10 +257,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E15335E019367A1B00E45E3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E15335FC19367C6B00E45E3A /* TextUtilities_Tests.m in Sources */,
+				E116FCF1193681B800E46924 /* TextUtilities.m in Sources */,
+				E116FCF2193681E000E46924 /* ProjectUtilities.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1D6A11919267AEC00B425B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1253FBD1930F6B1003584F2 /* ProjectUtilities.m in Sources */,
+				E112CE061930954800B72F92 /* TextUtilities.m in Sources */,
 				E1A282C119267E7200C3B87D /* IntelliPaste.m in Sources */,
 				E1A282C419267F9C00C3B87D /* NSString+CodeUtilities.m in Sources */,
 			);
@@ -167,7 +280,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E15335F119367A1B00E45E3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1D6A11C19267AEC00B425B5 /* IntelliPaste */;
+			targetProxy = E15335F019367A1B00E45E3A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		E15335EA19367A1B00E45E3A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E15335EB19367A1B00E45E3A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		E1D6A12919267AEC00B425B5 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -179,6 +308,41 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E15335F219367A1B00E45E3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IntelliPaste Tests/IntelliPaste Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "IntelliPaste Tests/IntelliPaste Tests-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E15335F319367A1B00E45E3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IntelliPaste Tests/IntelliPaste Tests-Prefix.pch";
+				INFOPLIST_FILE = "IntelliPaste Tests/IntelliPaste Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		E1D6A12D19267AEC00B425B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -290,6 +454,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E15335F419367A1B00E45E3A /* Build configuration list for PBXNativeTarget "IntelliPaste Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E15335F219367A1B00E45E3A /* Debug */,
+				E15335F319367A1B00E45E3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E1D6A11819267AEC00B425B5 /* Build configuration list for PBXProject "IntelliPaste" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

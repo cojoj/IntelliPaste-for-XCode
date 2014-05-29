@@ -3,11 +3,11 @@ IntelliPaste-for-XCode
 
 ## Overview
 
-IntelliPaste is an Xcode plugin that makes copy-pasting between header and method files easier. 
+IntelliPaste is an Xcode plugin that makes copy-pasting methods and RGB colors easier.
 
 ## Usage
 
-Copy one or more methods from the method file. Then use `Shift+Cmd+V` or `Edit` > `Paste Methods` to copy paste them with the correct format to the header file. Alternatively, the starting point can be the header file, which is then copy-pasted to the method file.
+Copy one or more methods from the method file. Then use `Shift+Cmd+V` or `Edit` > `Paste Intelligently` to copy paste them with the correct format to the header file. Alternatively, the starting point can be the header file which is then copy-pasted to the method file. You can also copy RGB colors from hex or byte values and paste them directly to NSColor/UIColor using the same shortcut or menu item.
 
 ![IntelliPaste-Demo.gif](https://raw.githubusercontent.com/RobertGummesson/IntelliPaste-for-XCode/master/Screenshots/IntelliPaste-Demo.gif)
 
@@ -18,6 +18,10 @@ IntelliPaste is available through [Alcatraz - The package manager for Xcode](htt
 If you rather compile it yourself, simply build the Xcode project and restart Xcode. The plugin will automatically be installed in `~/Library/Application Support/Developer/Shared/Xcode/Plug-ins`. To uninstall, just remove the plugin from there (and restart Xcode).
 
 The plug-in is developed and tested using Xcode 5.1.1. 
+
+## Limitations
+
+This plug-in is designed for Objective-C and is currently not compatible with C and C++ code.
 
 ## Known issues
 

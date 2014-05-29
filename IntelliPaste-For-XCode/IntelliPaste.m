@@ -7,6 +7,7 @@
 
 #import "IntelliPaste.h"
 #import "NSString+CodeUtilities.h"
+#import "TextUtilities.h"
 
 @interface IntelliPaste ()
 
@@ -44,7 +45,7 @@
     if (editMenuItem) {
         
         NSUInteger itemIndex = [self menuIndexForMenuItem:editMenuItem withTitle:kPaste];
-        NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:@"Paste Methods" action:@selector(pasteMethods) keyEquivalent:@""];
+        NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:@"Paste Intelligently" action:@selector(pasteMethods) keyEquivalent:@""];
         menuItem.keyEquivalentModifierMask = NSShiftKeyMask | NSCommandKeyMask;
         menuItem.keyEquivalent = @"v";
         menuItem.target = self;
@@ -69,14 +70,24 @@
 {
     NSArray *classes = [[NSArray alloc] initWithObjects:[NSString class], nil];
     NSArray *strings = [[NSPasteboard generalPasteboard] readObjectsForClasses:classes options:0];
-    if (strings.count == 0) return;
     
     NSString *clipBoardText = strings.firstObject;
+    if (strings.count == 0) {
+        [self pasteColorWithText:clipBoardText];
+        return;
+    }
+
     NSArray *methods = [clipBoardText methods];
-    if (methods.count == 0) return;
+    if (methods.count == 0) {
+        [self pasteColorWithText:clipBoardText];
+        return;
+    }
     
     NSString *suffix = [self suffix];
-    if (!suffix) return;
+    if (!suffix) {
+        [self pasteColorWithText:clipBoardText];
+        return;
+    }
 
     NSMutableArray *mutMethods = [NSMutableArray arrayWithArray:methods];
     [mutMethods enumerateObjectsUsingBlock:^(NSString *method, NSUInteger idx, BOOL *stop) {
@@ -94,6 +105,14 @@
 }
 
 #pragma mark - Utilities
+
+- (void)pasteColorWithText:(NSString *)text
+{
+    NSString *color = [TextUtilities colorsFromText:text];
+    if (color) {
+        [self.textView insertText:color];
+    }
+}
 
 - (NSString *)suffix
 {
