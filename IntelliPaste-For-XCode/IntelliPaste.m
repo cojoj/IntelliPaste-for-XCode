@@ -45,7 +45,7 @@
     if (editMenuItem) {
         
         NSUInteger itemIndex = [self menuIndexForMenuItem:editMenuItem withTitle:kPaste];
-        NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:@"Paste Methods" action:@selector(pasteMethods) keyEquivalent:@""];
+        NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:@"Paste Intelligently" action:@selector(pasteMethods) keyEquivalent:@""];
         menuItem.keyEquivalentModifierMask = NSShiftKeyMask | NSCommandKeyMask;
         menuItem.keyEquivalent = @"v";
         menuItem.target = self;
