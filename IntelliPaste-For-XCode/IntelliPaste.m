@@ -109,7 +109,7 @@
 
 - (void)pasteColorWithText:(NSString *)text
 {
-    NSString *color = [TextUtilities colorsFromText:text];
+    NSString *color = [TextUtilities colorsFromText:text languageType:[ProjectUtilities currentLanguage]];
     if (color) {
         [self.textView insertText:color];
     }

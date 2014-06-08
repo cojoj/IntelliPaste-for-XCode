@@ -6,9 +6,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ProjectUtilities.h"
 
 @interface TextUtilities : NSObject
 
-+ (NSString *)colorsFromText:(NSString *)text;
++ (NSString *)colorsFromText:(NSString *)text languageType:(LanguageType)type;
 
 @end
