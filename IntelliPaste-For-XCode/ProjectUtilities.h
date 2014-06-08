@@ -15,6 +15,14 @@ typedef NS_ENUM(NSUInteger, ProjectType) {
     ProjectTypeMacosx
 };
 
+typedef NS_ENUM(NSUInteger, LanguageType) {
+    LanguageTypeUnknown,
+    LanguageTypeObjectiveC,
+    LanguageTypeSwift
+};
+
 + (ProjectType)projectType;
++ (LanguageType)currentLanguage;
++ (NSString *)currentFileType;
 
 @end

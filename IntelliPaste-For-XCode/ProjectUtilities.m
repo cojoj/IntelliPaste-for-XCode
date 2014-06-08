@@ -71,4 +71,35 @@
     return ProjectTypeUnknown;
 }
 
++ (NSString *)currentFileType
+{
+    NSWindowController *currentWindowController = [[NSApp mainWindow] windowController];
+    
+    id editorArea = [currentWindowController valueForKey:@"editorArea"];
+    id editorContext = [editorArea valueForKey:@"lastActiveEditorContext"];
+    id editor = [editorContext valueForKey:@"editor"];
+    
+    id sourceCodeDocument;
+    if ([editor isKindOfClass:NSClassFromString(@"IDESourceCodeEditor")]) {
+        sourceCodeDocument = [editor valueForKey:@"sourceCodeDocument"];
+    } else if ([editor isKindOfClass:NSClassFromString(@"IDESourceCodeComparisonEditor")]) {
+        id primaryDocument = [editor valueForKey:@"primaryDocument"];
+        if ([primaryDocument isKindOfClass:NSClassFromString(@"IDESourceCodeDocument")]) {
+            sourceCodeDocument = primaryDocument;
+        }
+    }
+    return sourceCodeDocument ? [[sourceCodeDocument valueForKey:@"fileURL"] pathExtension] : nil;
+}
+
++ (LanguageType)currentLanguage
+{
+    NSString *fileType = [self currentFileType];
+    if ([fileType isEqualToString:@"h"] || [fileType isEqualToString:@"m"]) {
+        return LanguageTypeObjectiveC;
+    } else if ([fileType isEqualToString:@"swift"]) {
+        return LanguageTypeSwift;
+    }
+    return LanguageTypeUnknown;
+}
+
 @end
