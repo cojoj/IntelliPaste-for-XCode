@@ -1,29 +1,30 @@
 //
-//  NSString+CodeUtilities.m
-//  IntelliPaste-For-XCode
+//  CodeUtilities.m
+//  IntelliPaste
 //
-//  Created by Robert Gummesson on 16/05/2014.
+//  Created by Robert Gummesson on 09/06/2014.
+//  Copyright (c) 2014 Cane Media Limited. All rights reserved.
 //
 
-#import "NSString+CodeUtilities.h"
+#import "CodeUtilities.h"
 
-@implementation NSString (CodeUtilities)
+@implementation CodeUtilities
 
-- (NSArray *)methods
++ (NSArray *)methodsFromText:(NSString *)text
 {
     NSCharacterSet *const characterSetMethods = [NSCharacterSet characterSetWithCharactersInString:@"+-{}"];
     NSCharacterSet *const characterSetHeaders = [NSCharacterSet characterSetWithCharactersInString:@"+-;"];
     
-    NSRange range = NSMakeRange(0, self.length);
-    NSArray *methods = [self methodsWithRange:&range characterSet:characterSetMethods isRoot:YES];
+    NSRange range = NSMakeRange(0, text.length);
+    NSArray *methods = [self methodsFromText:text range:&range characterSet:characterSetMethods isRoot:YES];
     
     if (methods.count == 0) {
-        methods = [self methodsWithRange:&range characterSet:characterSetHeaders isRoot:YES];
+        methods = [self methodsFromText:text range:&range characterSet:characterSetHeaders isRoot:YES];
     }
     return methods;
 }
 
-- (NSArray *)methodsWithRange:(NSRangePointer)rangePointer characterSet:(NSCharacterSet *)characterSet isRoot:(BOOL)isRoot
++ (NSArray *)methodsFromText:(NSString *)text range:(NSRangePointer)rangePointer characterSet:(NSCharacterSet *)characterSet isRoot:(BOOL)isRoot
 {
     NSRange range = NSMakeRange(rangePointer->location, rangePointer->length);
     NSUInteger previousLocation = range.location;
@@ -31,13 +32,13 @@
     NSMutableArray *methods = [NSMutableArray array];
     NSCharacterSet *const characterSetDefault = [NSCharacterSet characterSetWithCharactersInString:@"{}"];
     
-    BOOL isMethod = NO, canBeMethod = YES;
+    BOOL isMethod = NO, canBeMethod = YES, isOpen = NO;
     
-    range.location = [self rangeOfCharacterFromSet:characterSet options:0 range:range].location;
+    range.location = [text rangeOfCharacterFromSet:characterSet options:0 range:range].location;
     while (range.location != NSNotFound) {
-        range.length = self.length - range.location;
+        range.length = text.length - range.location;
         
-        char token = [self characterAtIndex:range.location];
+        char token = [text characterAtIndex:range.location];
         switch (token) {
             case '+':
             case '-':
@@ -54,17 +55,18 @@
                     break;
                 }
                 isMethod = NO;
+                isOpen = YES;
                 
                 if (isRoot) {
                     previousLocation--;
                     canBeMethod = token == ';';
                     
-                    NSString *method = [self substringWithRange:NSMakeRange(previousLocation, range.location - previousLocation)];
+                    NSString *method = [text substringWithRange:NSMakeRange(previousLocation, range.location - previousLocation)];
                     [methods addObject:[method stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
                 }
                 range.location++;
                 range.length--;
-                [self methodsWithRange:&range characterSet:characterSetDefault isRoot:NO];
+                [self methodsFromText:text range:&range characterSet:characterSetDefault isRoot:NO];
                 canBeMethod = YES;
                 break;
             }
@@ -72,7 +74,11 @@
             case '}':
                 rangePointer->location = ++range.location;
                 rangePointer->length = --range.length;
-                return methods;
+                if (isOpen) {
+                    return methods;
+                } else {
+                    break;
+                }
         }
         
         if (!range.length) {
@@ -82,11 +88,12 @@
         range.location++;
         range.length--;
         
-        NSUInteger location = [self rangeOfCharacterFromSet:characterSet options:0 range:range].location;
+        NSUInteger location = [text rangeOfCharacterFromSet:characterSet options:0 range:range].location;
         if (location == NSNotFound) {
             if (isRoot && isMethod) {
-                NSString *method = [self substringWithRange:NSMakeRange(previousLocation, self.length - previousLocation)];
-                [methods addObject:[method stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];            }
+                NSString *method = [text substringWithRange:NSMakeRange(previousLocation, text.length - previousLocation)];
+                [methods addObject:[method stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+            }
             break;
         } else {
             previousLocation = range.location;

@@ -1,0 +1,19 @@
+//
+//  CodeUtilities.m
+//  IntelliPaste
+//
+
++ (NSString *)basePath
+{
+    NSURL *workspaceURL = [self workspaceURL];
+    return workspaceURL ? [workspaceURL URLByDeletingLastPathComponent].path : nil;
+}
+
+- (NSString *)colorsFromText:(NSString *)text languageType:(LanguageType)type
+{
+    NSString *result = [self colorsFromRGBText:text languageType:type];
+    if (!result) {
+        result = [self colorsFromHexText:text languageType:type];
+    }
+    return result;
+}

@@ -6,9 +6,9 @@
 //
 
 #import "IntelliPaste.h"
+#import "CodeUtilities.h"
 #import "ProjectUtilities.h"
 #import "TextUtilities.h"
-#import "NSString+CodeUtilities.h"
 
 @interface IntelliPaste ()
 
@@ -78,7 +78,7 @@
         return;
     }
 
-    NSArray *methods = [clipBoardText methods];
+    NSArray *methods = [CodeUtilities methodsFromText:clipBoardText];
     if (methods.count == 0) {
         [self pasteColorWithText:clipBoardText];
         return;
