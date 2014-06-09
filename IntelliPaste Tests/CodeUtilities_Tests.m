@@ -68,7 +68,7 @@
 
 - (void)testMultipleMethodParsing
 {
-    NSArray *expectedResult = @[@"+ (NSString *)basePath", @"- (NSString *)colorsFromText:(NSString *)text languageType:(LanguageType)type"];
+    NSArray *const expectedResult = @[@"+ (NSString *)basePath", @"- (NSString *)colorsFromText:(NSString *)text languageType:(LanguageType)type"];
     
     XCTAssertEqualObjects([CodeUtilities methodsFromText:self.testMethods], expectedResult, "Text should parse correctly");
     
