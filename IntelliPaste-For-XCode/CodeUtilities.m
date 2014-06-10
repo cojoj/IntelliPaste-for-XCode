@@ -74,7 +74,7 @@
             case '}':
                 rangePointer->location = ++range.location;
                 rangePointer->length = --range.length;
-                if (isOpen) {
+                if (!isRoot || isOpen) {
                     return methods;
                 } else {
                     break;
