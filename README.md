@@ -25,7 +25,7 @@ This plug-in is designed for Swift and Objective-C and is currently not compatib
 
 ## Known issues
 
-* Methods with comments containing curly brackets could under some circumstances fail to paste. A fix for this is on my TODO-list. 
+* Pragma marks and methods with comments containing curly brackets could under some circumstances fail to paste. A fix for this is on my TODO-list. 
 
 ## License
 
