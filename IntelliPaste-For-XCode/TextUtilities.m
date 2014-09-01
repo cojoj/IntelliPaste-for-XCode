@@ -16,10 +16,10 @@
 
 const BOOL insertPrefix = YES;
 
-NSString *const rgbFormatObjC  = @"[%@Color colorWithRed:%u.0/255.0 green:%u.0/255.0 blue:%u.0/255.0 alpha:1.0]";
-NSString *const rgbaFormatObjC = @"[%@Color colorWithRed:%u.0/255.0 green:%u.0/255.0 blue:%u.0/255.0 alpha:%u.0/255.0]";
-NSString *const rgbFormatSwift = @"%@Color(red:%u.0/255.0, green:%u.0/255.0, blue:%u.0/255.0, alpha:1.0)";
-NSString *const rgbaFormatSwift = @"%@Color(red:%u.0/255.0, green:%u.0/255.0, blue:%u.0/255.0, alpha:%u.0/255.0)";
+NSString *const rgbFormatObjC  = @"[%@Color colorWithRed:%u./255. green:%u./255. blue:%u./255. alpha:1]";
+NSString *const rgbaFormatObjC = @"[%@Color colorWithRed:%u./255. green:%u./255. blue:%u./255. alpha:%u./255.]";
+NSString *const rgbFormatSwift = @"%@Color(red:%u./255., green:%u./255., blue:%u./255., alpha:1)";
+NSString *const rgbaFormatSwift = @"%@Color(red:%u./255., green:%u./255., blue:%u./255., alpha:%u./255.)";
 
 + (NSString *)colorsFromText:(NSString *)text languageType:(LanguageType)type
 {
