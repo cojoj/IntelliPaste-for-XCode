@@ -29,7 +29,7 @@
 
 - (void)testHexStrings
 {
-    NSString *const expectedResult = @"[UIColor colorWithRed:255./255. green:18./255. blue:52./255. alpha:1]";
+    NSString *const expectedResult = @"[UIColor colorWithRed:255./255. green:18./255. blue:52./255. alpha:1.]";
     NSString *const expectedResultAlpha = @"[UIColor colorWithRed:255./255. green:18./255. blue:52./255. alpha:52./255.]";
     LanguageType const t = LanguageTypeObjectiveC;
     
@@ -49,7 +49,7 @@
 
 - (void)testRgbStrings
 {
-    NSString *const expectedResult = @"[UIColor colorWithRed:255./255. green:18./255. blue:52./255. alpha:1]";
+    NSString *const expectedResult = @"[UIColor colorWithRed:255./255. green:18./255. blue:52./255. alpha:1.]";
     LanguageType const t = LanguageTypeObjectiveC;
     
     XCTAssertTrue([[TextUtilities colorsFromText:@"255, 18, 52" languageType:t] isEqualToString:expectedResult], @"Rgb with spaces not parsed correctly");
@@ -63,7 +63,7 @@
 
 - (void)testSwiftFormatting
 {
-    NSString *const expectedResult = @"UIColor(red:255./255., green:18./255., blue:52./255., alpha:1)";
+    NSString *const expectedResult = @"UIColor(red:255./255., green:18./255., blue:52./255., alpha:1.)";
     NSString *const expectedResultAlpha = @"UIColor(red:255./255., green:18./255., blue:52./255., alpha:52./255.)";
     LanguageType const t = LanguageTypeSwift;
     
