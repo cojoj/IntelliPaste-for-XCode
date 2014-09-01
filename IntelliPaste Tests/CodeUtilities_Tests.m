@@ -26,12 +26,6 @@
     self.testMethods = [NSString stringWithContentsOfURL:resourceURL encoding:NSUTF8StringEncoding error:nil];
 }
 
-- (void)tearDown
-{
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
-
 - (void)testStaticMethodParsing
 {
     NSString *snippet = [self.testMethods substringWithRange:NSMakeRange(0, 88)];
