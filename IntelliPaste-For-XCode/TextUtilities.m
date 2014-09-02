@@ -6,20 +6,31 @@
 //
 
 #import "TextUtilities.h"
-#import "ProjectUtilities.h"
 
 @implementation TextUtilities
 
-+ (NSString *)colorsFromText:(NSString *)text
+//  Modify the below constants if you want to customize the format.
+//  Example:
+//  For [RGAppearance colorWithRed:123 green:123 blue:123 alpha:1];
+//  make the format [%@RGAppearance colorWithRed:%u green:%u blue:%u alpha:1] and set insertPrefix to NO
+
+const BOOL insertPrefix = YES;
+
+NSString *const rgbFormatObjC  = @"[%@Color colorWithRed:%u./255. green:%u./255. blue:%u./255. alpha:1.]";
+NSString *const rgbaFormatObjC = @"[%@Color colorWithRed:%u./255. green:%u./255. blue:%u./255. alpha:%u./255.]";
+NSString *const rgbFormatSwift = @"%@Color(red:%u./255., green:%u./255., blue:%u./255., alpha:1.)";
+NSString *const rgbaFormatSwift = @"%@Color(red:%u./255., green:%u./255., blue:%u./255., alpha:%u./255.)";
+
++ (NSString *)colorsFromText:(NSString *)text languageType:(LanguageType)type
 {
-    NSString *result = [self colorsFromRGBText:text];
+    NSString *result = [self colorsFromRGBText:text languageType:type];
     if (!result) {
-        result = [self colorsFromHexText:text];
+        result = [self colorsFromHexText:text languageType:type];
     }
     return result;
 }
 
-+ (NSString *)colorsFromRGBText:(NSString *)text
++ (NSString *)colorsFromRGBText:(NSString *)text languageType:(LanguageType)type
 {
     if (text.length > 15) {
         return nil;
@@ -39,12 +50,12 @@
     if (!rgb) {
         return nil;
     }
-    
+
     NSString *prefix = [ProjectUtilities projectType] == ProjectTypeMacosx ? @"NS" : @"UI";
-    return [NSString stringWithFormat:@"[%@Color colorWithRed:%@./255. green:%@./255. blue:%@./255. alpha:1.]", prefix, rgb[0], rgb[1], rgb[2]];
+    return [NSString stringWithFormat:type == LanguageTypeSwift ? rgbFormatSwift : rgbFormatObjC, prefix, (uint)[rgb[0] integerValue], (uint)[rgb[1] integerValue], (uint)[rgb[2] integerValue]];
 }
 
-+ (NSString *)colorsFromHexText:(NSString *)text
++ (NSString *)colorsFromHexText:(NSString *)text languageType:(LanguageType)type
 {
     static NSCharacterSet *characterSet;
     static dispatch_once_t onceToken;
@@ -86,11 +97,11 @@
         a = result - r * (1 << 24) - g * (1 << 16) - b * (1 << 8);
     }
     
-    NSString *prefix = [ProjectUtilities projectType] == ProjectTypeMacosx ? @"NS" : @"UI";
+    NSString *prefix = insertPrefix ? ([ProjectUtilities projectType] == ProjectTypeMacosx ? @"NS" : @"UI") : @"";
     if (a == 255) {
-        return [NSString stringWithFormat:@"[%@Color colorWithRed:%u./255. green:%u./255. blue:%u./255. alpha:1.]", prefix, r, g, b];
+        return [NSString stringWithFormat:type == LanguageTypeSwift ? rgbFormatSwift : rgbFormatObjC, prefix, r, g, b];
     }
-    return [NSString stringWithFormat:@"[%@Color colorWithRed:%u./255. green:%u./255. blue:%u./255. alpha:%u./255.]", prefix, r, g, b, a];
+    return [NSString stringWithFormat:type == LanguageTypeSwift ? rgbaFormatSwift : rgbaFormatObjC, prefix, r, g, b, a];
 }
 
 @end

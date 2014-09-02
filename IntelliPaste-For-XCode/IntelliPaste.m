@@ -6,7 +6,8 @@
 //
 
 #import "IntelliPaste.h"
-#import "NSString+CodeUtilities.h"
+#import "CodeUtilities.h"
+#import "ProjectUtilities.h"
 #import "TextUtilities.h"
 
 @interface IntelliPaste ()
@@ -77,7 +78,7 @@
         return;
     }
 
-    NSArray *methods = [clipBoardText methods];
+    NSArray *methods = [CodeUtilities methodsFromText:clipBoardText];
     if (methods.count == 0) {
         [self pasteColorWithText:clipBoardText];
         return;
@@ -108,7 +109,7 @@
 
 - (void)pasteColorWithText:(NSString *)text
 {
-    NSString *color = [TextUtilities colorsFromText:text];
+    NSString *color = [TextUtilities colorsFromText:text languageType:[ProjectUtilities currentLanguage]];
     if (color) {
         [self.textView insertText:color];
     }
@@ -117,33 +118,13 @@
 - (NSString *)suffix
 {
     NSString *suffix;
-    NSString *currentFileType = [self currentFileType];
+    NSString *currentFileType = [ProjectUtilities currentFileType];
     if ([currentFileType isEqualToString:@"m"]) {
         suffix = @"\n{\n\t\n}\n";
     } else if ([currentFileType isEqualToString:@"h"]) {
         suffix = @";";
     }
     return suffix;
-}
-
-- (NSString *)currentFileType
-{
-    NSWindowController *currentWindowController = [[NSApp mainWindow] windowController];
-    
-    id editorArea = [currentWindowController valueForKey:@"editorArea"];
-    id editorContext = [editorArea valueForKey:@"lastActiveEditorContext"];
-    id editor = [editorContext valueForKey:@"editor"];
-    
-    id sourceCodeDocument;
-    if ([editor isKindOfClass:NSClassFromString(@"IDESourceCodeEditor")]) {
-        sourceCodeDocument = [editor valueForKey:@"sourceCodeDocument"];
-    } else if ([editor isKindOfClass:NSClassFromString(@"IDESourceCodeComparisonEditor")]) {
-        id primaryDocument = [editor valueForKey:@"primaryDocument"];
-        if ([primaryDocument isKindOfClass:NSClassFromString(@"IDESourceCodeDocument")]) {
-            sourceCodeDocument = primaryDocument;
-        }
-    }
-    return sourceCodeDocument ? [[sourceCodeDocument valueForKey:@"fileURL"] pathExtension] : nil;
 }
 
 - (NSUInteger)menuIndexForMenuItem:(NSMenuItem *)menuItem withTitle:(NSString *)title

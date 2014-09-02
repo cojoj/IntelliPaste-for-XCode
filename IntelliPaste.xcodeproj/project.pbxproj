@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E102446B19466EB4002B5F17 /* CodeUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E102446A19466EB4002B5F17 /* CodeUtilities.m */; };
+		E102446D19467038002B5F17 /* TestInputData.txt in Resources */ = {isa = PBXBuildFile; fileRef = E102446C19467038002B5F17 /* TestInputData.txt */; };
+		E102446F194670BA002B5F17 /* CodeUtilities_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E102446E194670BA002B5F17 /* CodeUtilities_Tests.m */; };
+		E102447019467546002B5F17 /* CodeUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E102446A19466EB4002B5F17 /* CodeUtilities.m */; };
 		E112CE061930954800B72F92 /* TextUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E112CE051930954800B72F92 /* TextUtilities.m */; };
 		E116FCF1193681B800E46924 /* TextUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E112CE051930954800B72F92 /* TextUtilities.m */; };
 		E116FCF2193681E000E46924 /* ProjectUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E1253FBC1930F6B0003584F2 /* ProjectUtilities.m */; };
@@ -15,7 +19,6 @@
 		E15335EC19367A1B00E45E3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E15335EA19367A1B00E45E3A /* InfoPlist.strings */; };
 		E15335FC19367C6B00E45E3A /* TextUtilities_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E15335FB19367C6B00E45E3A /* TextUtilities_Tests.m */; };
 		E1A282C119267E7200C3B87D /* IntelliPaste.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A282C019267E7200C3B87D /* IntelliPaste.m */; };
-		E1A282C419267F9C00C3B87D /* NSString+CodeUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A282C319267F9C00C3B87D /* NSString+CodeUtilities.m */; };
 		E1D6A12119267AEC00B425B5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D6A12019267AEC00B425B5 /* Cocoa.framework */; };
 		E1D6A12B19267AEC00B425B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1D6A12919267AEC00B425B5 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
@@ -31,6 +34,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E102446919466EB4002B5F17 /* CodeUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeUtilities.h; sourceTree = "<group>"; };
+		E102446A19466EB4002B5F17 /* CodeUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeUtilities.m; sourceTree = "<group>"; };
+		E102446C19467038002B5F17 /* TestInputData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestInputData.txt; sourceTree = "<group>"; };
+		E102446E194670BA002B5F17 /* CodeUtilities_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeUtilities_Tests.m; sourceTree = "<group>"; };
 		E112CE041930954800B72F92 /* TextUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextUtilities.h; sourceTree = "<group>"; };
 		E112CE051930954800B72F92 /* TextUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextUtilities.m; sourceTree = "<group>"; };
 		E1253FBB1930F6B0003584F2 /* ProjectUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectUtilities.h; sourceTree = "<group>"; };
@@ -44,8 +51,6 @@
 		E170E79C1936986F00B8499D /* IntelliPaste-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IntelliPaste-Prefix.pch"; sourceTree = "<group>"; };
 		E1A282BF19267E7200C3B87D /* IntelliPaste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntelliPaste.h; sourceTree = "<group>"; };
 		E1A282C019267E7200C3B87D /* IntelliPaste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntelliPaste.m; sourceTree = "<group>"; };
-		E1A282C219267F9C00C3B87D /* NSString+CodeUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CodeUtilities.h"; sourceTree = "<group>"; };
-		E1A282C319267F9C00C3B87D /* NSString+CodeUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CodeUtilities.m"; sourceTree = "<group>"; };
 		E1D6A11D19267AEC00B425B5 /* IntelliPaste.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelliPaste.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D6A12019267AEC00B425B5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E1D6A12319267AEC00B425B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -79,7 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				E15335E819367A1B00E45E3A /* Supporting Files */,
+				E102446E194670BA002B5F17 /* CodeUtilities_Tests.m */,
 				E15335FB19367C6B00E45E3A /* TextUtilities_Tests.m */,
+				E102446C19467038002B5F17 /* TestInputData.txt */,
 			);
 			path = "IntelliPaste Tests";
 			sourceTree = "<group>";
@@ -92,15 +99,6 @@
 				E15335EF19367A1B00E45E3A /* IntelliPaste Tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E15335F819367BAA00E45E3A /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				E1A282C219267F9C00C3B87D /* NSString+CodeUtilities.h */,
-				E1A282C319267F9C00C3B87D /* NSString+CodeUtilities.m */,
-			);
-			name = Categories;
 			sourceTree = "<group>";
 		};
 		E1D6A11419267AEC00B425B5 = {
@@ -145,14 +143,15 @@
 		E1D6A12619267AEC00B425B5 /* IntelliPaste-For-XCode */ = {
 			isa = PBXGroup;
 			children = (
-				E15335F819367BAA00E45E3A /* Categories */,
 				E1D6A12719267AEC00B425B5 /* Supporting Files */,
+				E102446919466EB4002B5F17 /* CodeUtilities.h */,
+				E102446A19466EB4002B5F17 /* CodeUtilities.m */,
 				E1A282BF19267E7200C3B87D /* IntelliPaste.h */,
 				E1A282C019267E7200C3B87D /* IntelliPaste.m */,
-				E112CE041930954800B72F92 /* TextUtilities.h */,
-				E112CE051930954800B72F92 /* TextUtilities.m */,
 				E1253FBB1930F6B0003584F2 /* ProjectUtilities.h */,
 				E1253FBC1930F6B0003584F2 /* ProjectUtilities.m */,
+				E112CE041930954800B72F92 /* TextUtilities.h */,
+				E112CE051930954800B72F92 /* TextUtilities.m */,
 			);
 			path = "IntelliPaste-For-XCode";
 			sourceTree = "<group>";
@@ -243,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E15335EC19367A1B00E45E3A /* InfoPlist.strings in Resources */,
+				E102446D19467038002B5F17 /* TestInputData.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +261,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E102447019467546002B5F17 /* CodeUtilities.m in Sources */,
 				E15335FC19367C6B00E45E3A /* TextUtilities_Tests.m in Sources */,
+				E102446F194670BA002B5F17 /* CodeUtilities_Tests.m in Sources */,
 				E116FCF1193681B800E46924 /* TextUtilities.m in Sources */,
 				E116FCF2193681E000E46924 /* ProjectUtilities.m in Sources */,
 			);
@@ -271,10 +273,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E102446B19466EB4002B5F17 /* CodeUtilities.m in Sources */,
 				E1253FBD1930F6B1003584F2 /* ProjectUtilities.m in Sources */,
 				E112CE061930954800B72F92 /* TextUtilities.m in Sources */,
 				E1A282C119267E7200C3B87D /* IntelliPaste.m in Sources */,
-				E1A282C419267F9C00C3B87D /* NSString+CodeUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
