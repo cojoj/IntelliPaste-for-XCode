@@ -17,3 +17,10 @@
     }
     return result;
 }
+
+#pragma mark - test
+
+- (BOOL)tinyMethod
+{
+    return YES;
+}
