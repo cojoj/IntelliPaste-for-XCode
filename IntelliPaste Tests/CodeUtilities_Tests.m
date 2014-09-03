@@ -45,15 +45,15 @@
 
 - (void)testNonStaticMethodParsing
 {
-    NSString *snippet = [self.testMethods substringWithRange:NSMakeRange(202, self.testMethods.length - 202)];
+    NSString *snippet = [self.testMethods substringWithRange:NSMakeRange(202, 264)];
     NSArray *const expectedResult = @[@"- (NSString *)colorsFromText:(NSString *)text languageType:(LanguageType)type"];
     
     XCTAssertEqualObjects([CodeUtilities methodsFromText:snippet], expectedResult, "Text with initial range should parse correctly");
     
-    snippet = [self.testMethods substringWithRange:NSMakeRange(46, self.testMethods.length - 46)];
+    snippet = [self.testMethods substringWithRange:NSMakeRange(46, 420)];
     XCTAssertEqualObjects([CodeUtilities methodsFromText:snippet], expectedResult, "Text with partial method should parse correctly");
     
-    snippet = [self.testMethods substringWithRange:NSMakeRange(115, self.testMethods.length - 115)];
+    snippet = [self.testMethods substringWithRange:NSMakeRange(115, 351)];
     XCTAssertEqualObjects([CodeUtilities methodsFromText:snippet], expectedResult, "Text with partial method should parse correctly");
     
     snippet = [self.testMethods substringWithRange:NSMakeRange(203, 77)];
@@ -64,10 +64,19 @@
 {
     NSArray *const expectedResult = @[@"+ (NSString *)basePath", @"- (NSString *)colorsFromText:(NSString *)text languageType:(LanguageType)type"];
     
-    XCTAssertEqualObjects([CodeUtilities methodsFromText:self.testMethods], expectedResult, "Text should parse correctly");
+    NSString *snippet = [self.testMethods substringWithRange:NSMakeRange(0, 466)];
+    XCTAssertEqualObjects([CodeUtilities methodsFromText:snippet], expectedResult, "Text should parse correctly");
     
-    NSString *snippet = [self.testMethods substringWithRange:NSMakeRange(0, 280)];
+    snippet = [self.testMethods substringWithRange:NSMakeRange(0, 280)];
     XCTAssertEqualObjects([CodeUtilities methodsFromText:snippet], expectedResult, "Text two methods should parse correctly");
+}
+
+- (void)testParsingMethodWithPragmaMark
+{
+    NSArray *const expectedResult = @[@"- (BOOL)tinyMethod"];
+    
+    NSString *snippet = [self.testMethods substringWithRange:NSMakeRange(466, 49)];
+    XCTAssertEqualObjects([CodeUtilities methodsFromText:snippet], expectedResult, "Text with pragma mark should parse correctly");
 }
 
 @end

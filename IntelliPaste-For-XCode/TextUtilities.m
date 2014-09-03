@@ -37,7 +37,7 @@ NSString *const rgbaFormatSwift = @"%@Color(red:%u./255., green:%u./255., blue:%
     }
     
     //TODO: Consider validating the numbers. Currently 999,999,999 is valid.
-    NSRegularExpression *const regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d{1,3}),+\\s*(\\d{1,3}),+\\s*(\\d{1,3})" options:0 error:nil];
+    NSRegularExpression *const regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d{1,3})[, ]+\\s*(\\d{1,3})[, ]+\\s*(\\d{1,3})" options:0 error:nil];
     
     __block NSArray *rgb = nil;
     [regex enumerateMatchesInString:text options:0 range:NSMakeRange(0, text.length) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {

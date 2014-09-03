@@ -12,8 +12,8 @@
 
 + (NSArray *)methodsFromText:(NSString *)text
 {
-    NSCharacterSet *const characterSetMethods = [NSCharacterSet characterSetWithCharactersInString:@"+-{}"];
-    NSCharacterSet *const characterSetHeaders = [NSCharacterSet characterSetWithCharactersInString:@"+-;"];
+    NSCharacterSet *const characterSetMethods = [NSCharacterSet characterSetWithCharactersInString:@"+-{}#"];
+    NSCharacterSet *const characterSetHeaders = [NSCharacterSet characterSetWithCharactersInString:@"+-;#"];
     
     NSRange range = NSMakeRange(0, text.length);
     NSArray *methods = [self methodsFromText:text range:&range characterSet:characterSetMethods isRoot:YES];
@@ -76,9 +76,21 @@
                 rangePointer->length = --range.length;
                 if (!isRoot || isOpen) {
                     return methods;
-                } else {
-                    break;
                 }
+                break;
+                
+            case '#':
+                if (!isMethod) {
+                    // For pragma marks, move to the next line
+                    NSCharacterSet *const lineBreakCharacterSet = [NSCharacterSet characterSetWithCharactersInString:@"\n"];
+                    NSUInteger location = [text rangeOfCharacterFromSet:lineBreakCharacterSet options:0 range:range].location;
+                    
+                    if (location != NSNotFound) {
+                        range.length -= location - range.location;
+                        range.location = location;
+                    }
+                }
+                break;
         }
         
         if (!range.length) {
